@@ -1,0 +1,46 @@
+.flexContainer {
+  display: flex;
+}
+.flexContainer > div {
+  margin-top: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+}
+.logo {
+  border-right: 0.5px groove;
+}
+.bold {
+  color: gray;
+  margin-bottom: 0!important;
+}
+
+.tabLinks {
+	background-color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 20px;
+  color: gray;
+}
+
+.tabLinksChosen {
+	background-color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 20px;
+  color: gray;
+  font-weight: bold;
+}
+
+.tabLinksChosen:focus {
+  outline: none;
+}
+
+.tabLinksChosen:hover {
+  outline: none;
+}

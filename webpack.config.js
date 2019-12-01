@@ -1,5 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -22,12 +24,18 @@ module.exports = {
         loaders: ["babel-loader"],
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        test: /\.css$/i,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
       },
-      // {
-      //   test: /\.svg$/, loader: 'svg-loader'
-      // },
       {
         test: /\.(png|jpg|gif|svg)$/i,
         use: [
@@ -40,24 +48,15 @@ module.exports = {
           },
         ],
       },
-      // {
-      //   test: /\.(ico|gif|png|jpe?g|svg)$/,
-      //   loaders: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: '[path][name].[ext]',
-      //         context: './src'     
-      //       }
-      //     }          
-      //   ]
-      // },
     ]
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
+      template: "./public/index.html",
+      filename: "./public/index.html"
+    }),
+    new webpack.ProvidePlugin({
+      Promise: 'es6-promise-promise',
     })
   ]
 };
