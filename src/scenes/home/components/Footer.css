@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  background-color: #B2BABB;
+  justify-content: space-between;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.text {
+  font-size: 15px;
+  color: gray;
+  align-self: center;
+  font-weight: 500;
+  margin: 0 2rem;
+}

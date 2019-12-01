@@ -1,0 +1,23 @@
+/*Loader*/
+.searchLoading {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  color: red;
+  font-size: 20px;
+}
+
+.show {
+	display: inline-block;
+}
+
+.hide {
+	display: none;
+}

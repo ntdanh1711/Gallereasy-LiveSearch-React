@@ -1,0 +1,69 @@
+.image {
+	width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.imageWrapper {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	box-sizing: border-box;
+  height: 100%;
+}
+
+.resultsContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.overlay {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 10%;
+	width: 10%;
+	opacity: 0;
+  transition: .3s ease;
+  margin: 0 1rem 1rem 0;
+}
+
+.overlayLiked {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 10%;
+	width: 10%;
+	opacity: 1;
+  transition: .3s ease;
+  margin: 0 1rem 1rem 0;
+}
+
+.resultItem {
+	position: relative;
+	border: 1px solid #898989;
+	margin: 16px;
+	text-align: center;
+	min-width: 200px;
+  box-shadow: 2px 2px 2px #898989;
+  object-fit: fill;
+  object-position: 100% 0;
+}
+
+.resultItem:hover .overlay {
+  opacity: 0.5;
+}
+
+
+.icon {
+  color: white;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
