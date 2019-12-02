@@ -32,7 +32,7 @@ class Home extends PureComponent {
 
   render() {
     const { renderSearchTab, numberFavorite } = this.state;
-    console.log(window.innerHeight);
+
     return(
       <div>
         <Header

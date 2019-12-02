@@ -4,6 +4,7 @@ import axios from 'axios';
 import Content from '../components/Content';
 import SearchBar from '../components/SearchBar'
 import services from '../services';
+import unique from '../../../utils/uniqueArray';
 
 class SearchTab extends PureComponent {
   constructor(props) {
@@ -15,6 +16,7 @@ class SearchTab extends PureComponent {
       errorMessage: '',
       count: 0,
       offset: 0,
+      limit: 8,
       loading: false,
       renderSearchTab: true,
       imageUrlList: localStorage.getItem('favoriteUrls')
@@ -30,23 +32,23 @@ class SearchTab extends PureComponent {
   onInputChange = (event) => {
     const querry = event.target.value;
     if(!querry) {
-      this.setState({ querry, images: [] });
+      this.setState({ querry, images: [], limit: 8 });
     } else {
-      this.setState({ querry, loading: true }, () => {
+      this.setState({ querry, loading: true, limit: 8 }, () => {
         this.fetchSearchResult(querry)
       });
     }
   }
 
   fetchSearchResult = (querry) => {
-    const { offset }  = this.state;
+    const { offset, limit }  = this.state;
 
     if( this.cancel ) {
 			this.cancel.cancel();
 		}
     this.cancel = axios.CancelToken.source();
 
-    const querryObject = { querry, offset };
+    const querryObject = { querry, offset, limit };
     services.fetchImageList(querryObject, this.cancel.token, this.onSuccess, this.onFail);
   }
 
@@ -77,8 +79,9 @@ class SearchTab extends PureComponent {
     const imageList = JSON.parse(localStorage.getItem('imageLikedList'));
 
     if(urlList && urlList.length > 0) {
-      const newUrlList = [...urlList, imageUrl];
-      const newImageList = [...imageList, imageObject]
+      const newUrlList = unique.uniqueArray([...urlList, imageUrl]);
+      const isUnique = unique.checkUniqueArrayObject(imageList, imageObject);
+      const newImageList = isUnique ? [...imageList, imageObject] :  [...imageList];
 
       localStorage.setItem('favoriteUrls', JSON.stringify(newUrlList));
       localStorage.setItem('imageLikedList', JSON.stringify(newImageList));
@@ -102,13 +105,17 @@ class SearchTab extends PureComponent {
     }
   }
 
-  handleOnImage = (e) => {
-    e.preventDefault();
+  handleFetchMore = () => {
+    const { limit, querry } = this.state;
+    const newLimit = limit + 8;
+    this.setState({ limit: newLimit }, () => this.fetchSearchResult(querry));
+    return true;
   }
 
   render() {
     const { querry, loading, images, errorMessage, imageUrlList, renderSearchTab, rerender } = this.state;
     const imageLikedList = JSON.stringify(imageUrlList);
+    const enableFetchMore = querry && images && images.length >= 8;
 
 
     if(images.length > 0) {
@@ -124,6 +131,8 @@ class SearchTab extends PureComponent {
         <SearchBar
           displayValue={querry}
           onInputChange={this.onInputChange}
+          handleFetchMore={this.handleFetchMore}
+          disabledFetch={!enableFetchMore}
         />
         <Content
           imageList={images}

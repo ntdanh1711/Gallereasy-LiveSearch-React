@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from "prop-types";
 
 import styles from './Header.css';
 
@@ -49,4 +50,10 @@ class Header extends PureComponent {
     );
   }
 }
+
+Header.propTypes = {
+  numberFav: PropTypes.number,
+  callbackChangeTab: PropTypes.func
+}
+
 export default Header;

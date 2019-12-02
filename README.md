@@ -1,6 +1,22 @@
 Gallereary
 🔥 This is a Live Search Applications build from React .
 
+Feature: 
++ SearchTab: 
+    - live search by keyword show in grid with same scale size
+    - add tag to mark favorite 
+    - fetch more than 8 images
+    - handle error
++ FavoriteTab:
+    - images in grid
+    - remove tag to unmark favorite
+    - handle messages
+
+API: supported by Giphy API - https://developers.giphy.com/docs/api/endpoint#search
+Asynchronous code(Promises): axios - use axios CancelToken to optimze request
+Supported IE 11 & upwards(es6-promise-promise)
+
+
 ![Demo Logo](/demo.PNG)
 
 Before you Start
