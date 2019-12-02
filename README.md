@@ -1,10 +1,7 @@
 Gallereary
 🔥 This is a Live Search Applications build from React .
 
-Feature: live search by keyword with same scale size in a grid , add and remove favorite, Favorite page
-
-
-![GitHub Logo](/public/demo.PNG)
+![Demo Logo](/demo.PNG)
 
 Before you Start
 I've branched the repo for individual topics. To checkout all branches run: git branch --all. To checkout individual branch run: git checkout <branch name>. From there on you should be good.

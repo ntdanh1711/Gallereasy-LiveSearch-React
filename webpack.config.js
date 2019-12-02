@@ -53,7 +53,7 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./public/index.html",
-      filename: "./public/index.html"
+      filename: "./index.html"
     }),
     new webpack.ProvidePlugin({
       Promise: 'es6-promise-promise',
