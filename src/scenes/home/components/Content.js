@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from "prop-types";
 
 import styles from './Content.css';
 import Spinner from '../../../images/spinner.gif';
@@ -6,7 +7,7 @@ import ImageList from './ImageList';
 
 class Content extends PureComponent {
   renderSearchResults = () => {
-    const { imageList, handleLikeImage, handleOnImage, isSearchTab } = this.props;
+    const { imageList, handleLikeImage, isSearchTab } = this.props;
 
     if(imageList && imageList.length > 0) {
       return (
@@ -14,7 +15,6 @@ class Content extends PureComponent {
           <ImageList
             imageList={imageList}
             handleLikeImage={handleLikeImage}
-            handleOnImage={handleOnImage}
             isSearchTab={isSearchTab}
           />
         </div>
@@ -36,4 +36,13 @@ class Content extends PureComponent {
     );
   }
 }
+
+Content.propTypes = {
+  isLoading: PropTypes.bool,
+  errorMess: PropTypes.string,
+  imageList: PropTypes.array,
+  handleLikeImage: PropTypes.func,
+  isSearchTab: PropTypes.bool
+}
+
 export default Content;
