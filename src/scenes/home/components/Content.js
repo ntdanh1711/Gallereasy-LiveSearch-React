@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 import styles from './Content.css';
 import Spinner from '../../../images/spinner.gif';
@@ -28,7 +28,7 @@ class Content extends PureComponent {
     return(
       <div>
         { isLoading === true
-          ? <img src={ Spinner } className={`${styles.searchLoading} ${ isLoading ? 'show' : 'hide' }`} alt="loader"/>
+          ? <img src={ Spinner } className={`${styles.searchLoading} ${ isLoading ? 'show' : 'hide' }`} alt='loader'/>
           : errorMess
             ? <p className={styles.message}>{ errorMess }</p>
             : this.renderSearchResults()}

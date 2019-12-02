@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 import styles from './Header.css';
 
@@ -38,10 +38,10 @@ class Header extends PureComponent {
           <div className={styles.logo}>
             <p className={styles.bold}>Galler<b>easy</b></p>
           </div>
-          <button value="search" className={backgroundSearchTab} onClick={this.handleChangeTab}>
+          <button value='search' className={backgroundSearchTab} onClick={this.handleChangeTab}>
             Search
           </button>
-          <button value="favourites" className={backgroundFavoritesTab} onClick={this.handleChangeTab}>
+          <button value='favourites' className={backgroundFavoritesTab} onClick={this.handleChangeTab}>
             Favourites({numberFav})
           </button>
         </div>

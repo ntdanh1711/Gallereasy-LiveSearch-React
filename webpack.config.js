@@ -1,4 +1,4 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -11,7 +11,7 @@ module.exports = {
   },
   devServer: {
     inline: true,
-    contentBase: "./build",
+    contentBase: './build',
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
@@ -21,7 +21,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ["babel-loader"],
+        loaders: ['babel-loader'],
       },
       {
         test: /\.css$/i,
@@ -43,7 +43,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 50000,    
-              name: "./fonts/[name].[ext]"
+              name: './fonts/[name].[ext]'
             },
           },
         ],
@@ -52,8 +52,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
+      template: './public/index.html',
+      filename: './index.html'
     }),
     new webpack.ProvidePlugin({
       Promise: 'es6-promise-promise',

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 import styles from './ImageList.css';
 import Heart from '../../../images/heart.png';
@@ -16,7 +16,7 @@ const ImageList = (props) => {
             <div className={styles.imageWrapper}>
               <img className={styles.image} src={ imgUrl } alt={image.title}/>
               <div id={ image.id } className={styleOverlay}>
-                <img src={Heart} alt="love"></img>
+                <img src={Heart} alt='love'></img>
               </div>
             </div>
           </a>

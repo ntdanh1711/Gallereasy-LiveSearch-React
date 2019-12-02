@@ -2,13 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './scenes/home';
 
-
 const App = () => {
   return (
     <Router>
-		<Switch>
-			<Route exact path='/' component={Home} />
-		</Switch>
+      <Switch>
+        <Route exact path='/' component={Home} />
+      </Switch>
 	</Router>
   );
 }

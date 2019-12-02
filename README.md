@@ -1,4 +1,5 @@
 Gallereary
+
 🔥 This is a Live Search Applications build from React .
 
 Feature: 
@@ -12,9 +13,9 @@ Feature:
     - remove tag to unmark favorite
     - handle messages
 
-API: supported by Giphy API - https://developers.giphy.com/docs/api/endpoint#search
-Asynchronous code(Promises): axios - use axios CancelToken to optimze request
-Supported IE 11 & upwards(es6-promise-promise)
++ API: supported by Giphy API - https://developers.giphy.com/docs/api/endpoint#search
++ Asynchronous code(Promises): axios - use axios CancelToken to optimze request
++ Supported IE 11 & upwards(es6-promise-promise)
 
 
 ![Demo Logo](/demo.PNG)
@@ -27,7 +28,7 @@ Branch Description:
 Live Search in react application
 
 Installation
-Clone this repo in git clone https://github.com/ntdanh1711/Gallereasy-LiveSearch
+Clone this repo in git clone [GitHub](https://github.com/ntdanh1711/Gallereasy-LiveSearch)
 
 Run npm install
 
