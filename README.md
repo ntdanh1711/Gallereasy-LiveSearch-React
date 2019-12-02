@@ -1,6 +1,9 @@
 Gallereary
 🔥 This is a Live Search Applications build from React .
 
+Feature: live search by keyword with same scale size in a grid , add and remove favorite, Favorite page
+
+
 ![GitHub Logo](/public/demo.PNG)
 
 Before you Start
