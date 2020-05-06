@@ -1,7 +1,10 @@
 # Gallereary
 
 🔥 This is a Live Search Applications build from React .
-
+### Technical: 
++ Javascripts: ReactJS
++ Compiler: Babel
++ Bundler: Webpack
 ### Feature: 
 + SearchTab: 
     - live search by keyword show in grid with same scale size
