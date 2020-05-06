@@ -33,9 +33,10 @@ Live Search in react application
 ### Installation
 Clone this repo in git clone [GitHub](https://github.com/ntdanh1711/Gallereasy-LiveSearch)
 
-Run npm install
+Run "npm install"
 
 
 ### Commands
-start Runs webpack dev server for development ( in watch mode )
-build Runs webpack in production mode
+"start" Runs webpack dev server for development ( in watch mode )
+
+"build" Runs webpack in production mode
