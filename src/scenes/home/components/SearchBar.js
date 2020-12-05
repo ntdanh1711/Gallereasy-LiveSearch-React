@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './SearchBar.css';
+import styles from './Search_Bar.css';
 
 const SearchBar = (props) => {
   const { displayValue, onInputChange, handleFetchMore, disabledFetch } = props; 
